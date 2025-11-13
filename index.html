@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery サンプルページ</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>jQuery サンプルページへようこそ!</h1>
+        </header>
+
+        <main>
+            <section class="intro">
+                <p>このページはjQueryを使った簡単なデモページです。</p>
+            </section>
+
+            <section class="demo-section">
+                <h2>インタラクティブなデモ</h2>
+
+                <div class="demo-box">
+                    <h3>1. ボタンをクリックしてテキストを表示</h3>
+                    <button id="showText" class="btn">クリックしてください</button>
+                    <p id="hiddenText" class="hidden">こんにちは!jQueryが動いています!</p>
+                </div>
+
+                <div class="demo-box">
+                    <h3>2. フェードイン/フェードアウト</h3>
+                    <button id="fadeToggle" class="btn">フェード切り替え</button>
+                    <div id="fadeBox" class="color-box">フェード効果</div>
+                </div>
+
+                <div class="demo-box">
+                    <h3>3. スライドアニメーション</h3>
+                    <button id="slideToggle" class="btn">スライド切り替え</button>
+                    <div id="slideContent" class="slide-content">
+                        <p>これはスライドで表示されるコンテンツです。</p>
+                        <p>jQueryのアニメーション機能を使っています。</p>
+                    </div>
+                </div>
+
+                <div class="demo-box">
+                    <h3>4. 色の変更</h3>
+                    <button id="changeColor" class="btn">色を変更</button>
+                    <div id="colorBox" class="color-box">色が変わります</div>
+                </div>
+
+                <div class="demo-box">
+                    <h3>5. リスト追加</h3>
+                    <input type="text" id="itemInput" placeholder="項目を入力してください">
+                    <button id="addItem" class="btn">追加</button>
+                    <ul id="itemList"></ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 jQuery Sample Page</p>
+        </footer>
+    </div>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- カスタムJavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
