@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タスク管理アプリ - CRUD with localStorage</title>
+    <link rel="stylesheet" href="css/crud.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 タスク管理アプリ</h1>
+            <p class="subtitle">localStorageを使ったCRUDサンプル</p>
+        </header>
+
+        <main>
+            <!-- タスク追加フォーム -->
+            <section class="task-form-section">
+                <h2>タスクを追加</h2>
+                <form id="taskForm">
+                    <div class="form-group">
+                        <label for="taskTitle">タイトル:</label>
+                        <input type="text" id="taskTitle" placeholder="タスクのタイトルを入力" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskDescription">説明:</label>
+                        <textarea id="taskDescription" placeholder="タスクの説明を入力" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskPriority">優先度:</label>
+                        <select id="taskPriority">
+                            <option value="low">低</option>
+                            <option value="medium" selected>中</option>
+                            <option value="high">高</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submitBtn">
+                        <span id="btnText">追加</span>
+                    </button>
+                    <button type="button" class="btn btn-secondary" id="cancelBtn" style="display: none;">
+                        キャンセル
+                    </button>
+                </form>
+            </section>
+
+            <!-- タスク一覧 -->
+            <section class="task-list-section">
+                <div class="list-header">
+                    <h2>タスク一覧</h2>
+                    <div class="list-actions">
+                        <span id="taskCount" class="task-count">0 件のタスク</span>
+                        <button class="btn btn-danger btn-small" id="clearAll">全て削除</button>
+                    </div>
+                </div>
+
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">全て</button>
+                    <button class="filter-btn" data-filter="high">高優先度</button>
+                    <button class="filter-btn" data-filter="medium">中優先度</button>
+                    <button class="filter-btn" data-filter="low">低優先度</button>
+                </div>
+
+                <div id="taskList" class="task-list">
+                    <p class="empty-message">タスクがありません。上のフォームから追加してください。</p>
+                </div>
+            </section>
+
+            <!-- 統計情報 -->
+            <section class="stats-section">
+                <h3>統計情報</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalTasks">0</div>
+                        <div class="stat-label">合計タスク</div>
+                    </div>
+                    <div class="stat-card high">
+                        <div class="stat-value" id="highPriorityTasks">0</div>
+                        <div class="stat-label">高優先度</div>
+                    </div>
+                    <div class="stat-card medium">
+                        <div class="stat-value" id="mediumPriorityTasks">0</div>
+                        <div class="stat-label">中優先度</div>
+                    </div>
+                    <div class="stat-card low">
+                        <div class="stat-value" id="lowPriorityTasks">0</div>
+                        <div class="stat-label">低優先度</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 CRUD Sample with localStorage | <a href="index.html">jQuery デモページへ</a></p>
+        </footer>
+    </div>
+
+    <script src="js/crud.js"></script>
+</body>
+</html>
